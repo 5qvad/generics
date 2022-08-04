@@ -1,3 +1,4 @@
+import javax.sound.midi.Soundbank;
 import java.util.Random;
 
 public class MagicBox<T> {
@@ -13,10 +14,11 @@ public class MagicBox<T> {
         for (int i = 0; i < items.length; i++) {
             if (items[i] == null) {
                 items[i] = item;
-                break;
+                return true;
             }
         }
-        return true;
+        System.out.println("Коробка полна! Не влезает: " + item);
+        return false;
     }
 
     T pick() {
@@ -31,7 +33,7 @@ public class MagicBox<T> {
         if (j != 0) {
             throw new RuntimeException("Магическая коробка не полна! Ещё " + j + " мест");
         } else
-        return items[randomInt];
+            return items[randomInt];
     }
 
 }
