@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class MagicBox<T> {
     private T[] items;
-    Random random = new Random();
+    private  Random random = new Random();
 
 
     public MagicBox(int capacity) {
